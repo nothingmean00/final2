@@ -1,0 +1,8 @@
+# .gitignore
+
+# Environment Variables
+.env
+
+# Other ignores...
+node_modules/
+dist/

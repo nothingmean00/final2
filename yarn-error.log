@@ -1,0 +1,83 @@
+Arguments: 
+  /usr/local/bin/node /opt/yarn-v1.22.19/bin/yarn.js add emailjs-com
+
+PATH: 
+  /opt/git/bin:/vscode/1.89.1.24130/bin/remote-cli:/opt/git/bin:/opt/git/bin:/usr/local/share/nvm/current/bin:/usr/local/share/npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.local/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.9.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/root/.cache/yarn/v6/npm-glob-parent-6.0.2-6d237d99083950c79290f24c7642a3de9a28f9e3-integrity/node_modules/glob-parent/LICENSE' -> '/project/workspace/node_modules/tailwindcss/node_modules/glob-parent/LICENSE'
+
+npm manifest: 
+  {
+    "name": "react-typescript",
+    "version": "1.0.0",
+    "description": "React and TypeScript example starter project",
+    "keywords": [
+      "typescript",
+      "react",
+      "starter"
+    ],
+    "main": "src/index.tsx",
+    "dependencies": {
+      "@emailjs/browser": "4.4.1",
+      "@react-aria/label": "3.7.11",
+      "@tailwindcss/aspect-ratio": "0.4.2",
+      "@tailwindcss/forms": "0.5.9",
+      "@tailwindcss/typography": "0.5.15",
+      "autoprefixer": "10.4.20",
+      "create-react-app": "5.0.1",
+      "framer-motion": "11.9.0",
+      "import-analyzer": "0.8.1",
+      "init": "0.1.2",
+      "lodash.debounce": "4.0.8",
+      "lucide-react": "0.445.0",
+      "petter-init": "0.4.0",
+      "postcss": "8.4.47",
+      "postcss-cli": "11.0.0",
+      "prop-types": "15.8.1",
+      "react": "18.3.1",
+      "react-dom": "18.2.0",
+      "react-fast-memo": "2.0.1",
+      "react-helmet": "6.1.0",
+      "react-hook-form": "7.53.0",
+      "react-lazy-load-image-component": "1.6.2",
+      "react-router-dom": "6.26.2",
+      "tailwindcss": "3.4.12",
+      "tailwindcss-base-font-size": "1.0.1",
+      "tailwindcss-fluid-typography": "1.0.4",
+      "tailwindscss": "0.3.0"
+    },
+    "devDependencies": {
+      "@types/react": "18.2.38",
+      "@types/react-dom": "18.2.15",
+      "@vitejs/plugin-react": "^4.2.1",
+      "typescript": "4.4.4",
+      "vite": "^5.0.11"
+    },
+    "scripts": {
+      "dev": "vite",
+      "build": "tsc && vite build",
+      "preview": "vite preview"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

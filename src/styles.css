@@ -1,0 +1,96 @@
+/* src/styles.css */
+
+/* Import Tailwind's base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================== */
+/*       Custom Styles    */
+/* ===================== */
+
+/* Organize custom styles within Tailwind's layers */
+
+/* ===================== */
+/*        Components       */
+/* ===================== */
+@layer components {
+  /* Custom Button Styles */
+
+  /* Primary Button */
+  .btn-primary {
+    @apply bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold 
+           hover:bg-indigo-500 transition-colors duration-300;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply bg-gray-900 text-white px-6 py-3 rounded-full font-semibold 
+           hover:bg-gray-800 transition-colors duration-300;
+  }
+
+  /* Card Component */
+  .card {
+    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300;
+  }
+
+  /* Light Background Section */
+  .section-bg-light {
+    @apply bg-gray-50;
+  }
+
+  /* Dark Background Section */
+  .section-bg-dark {
+    @apply bg-gray-800 text-white;
+  }
+}
+
+/* ===================== */
+/*        Utilities        */
+/* ===================== */
+@layer utilities {
+  /* Custom Margin Utilities */
+
+  /* Top Margin */
+  .mt-custom {
+    @apply mt-8;
+  }
+
+  /* Bottom Margin */
+  .mb-custom {
+    @apply mb-8;
+  }
+
+  /* Additional Custom Utilities can be added here */
+}
+
+/* ===================== */
+/*         Animations      */
+/* ===================== */
+@layer utilities {
+  /* Custom Animation for Hover Effects */
+
+  /* Scale Up on Hover */
+  .hover-scale-up:hover {
+    @apply transform scale-105;
+  }
+
+  /* Smooth Transition */
+  .transition-smooth {
+    @apply transition-transform duration-300;
+  }
+}
+
+/* ===================== */
+/*          Dark Mode      */
+/* ===================== */
+/* If you plan to support dark mode, you can add custom dark mode styles here */
+
+@media (prefers-color-scheme: dark) {
+  @layer components {
+    /* Example: Dark Mode Button */
+    .btn-primary-dark {
+      @apply bg-indigo-400 text-white hover:bg-indigo-300;
+    }
+  }
+}
