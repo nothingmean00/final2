@@ -88,9 +88,9 @@ module.exports = {
   // **4. Plugins**
   // Integrate Tailwind CSS plugins to extend functionality and streamline styling.
   plugins: [
-    // Removed require('@tailwindcss/forms'),
-    // Removed require('@tailwindcss/typography'),
-    // Removed require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'), // Re-added as per best practices for form styling
+    require('@tailwindcss/typography'), // Re-added for enhanced typography control
+    require('@tailwindcss/aspect-ratio'), // Re-added to control aspect ratios
     // Add more plugins as needed without causing issues
   ],
 };

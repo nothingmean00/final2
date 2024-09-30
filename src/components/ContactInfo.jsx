@@ -1,9 +1,9 @@
 // src/components/ContactInfo.jsx
 
-import React from "react";
-import PropTypes from "prop-types";
-import { Mail, Phone, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ContactInfo = () => {
   return (
@@ -55,7 +55,7 @@ const ContactInfo = () => {
             aria-label="Address"
           />
           <span className="text-gray-700">
-            123 Education Lane, New York, NY 10001
+            606 West 57th, New York, NY 10019
           </span>
         </div>
       </address>
@@ -79,7 +79,7 @@ const ContactInfo = () => {
           className="rounded-lg"
         ></iframe>
         <a
-          href="https://www.google.com/maps/place/123+Education+Lane,+New+York,+NY+10001"
+          href="https://www.google.com/maps/place/606+W+57th+St,+New+York,+NY+10019/@40.7706208,-73.9925102,16z/data=!3m1!4b1!4m6!3m5!1s0x89c2585b77850933:0x9879d50fa0be2e3c!8m2!3d40.7706208!4d-73.9925102!16s%2Fg%2F11f15jm0tb?entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
           className="block text-center mt-2 text-blue-600 hover:text-blue-800 transition-colors text-sm"
