@@ -1,22 +1,28 @@
-<!-- public/index.html -->
+<!-- index.html -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <meta name="theme-color" content="#000000" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- Updated favicon path without %PUBLIC_URL% -->
+    <link rel="icon" href="/favicon.ico" />
     <title>MyApp</title>
+    <!-- Optional: Preconnect to external resources for performance -->
+    <!--
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    -->
   </head>
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!-- The script tag should point to your entry file -->
+    <!-- Updated script tag to point to the correct entry file -->
     <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>
