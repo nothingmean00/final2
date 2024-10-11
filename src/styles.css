@@ -62,12 +62,7 @@
   }
 
   /* Additional Custom Utilities can be added here */
-}
 
-/* ===================== */
-/*         Animations      */
-/* ===================== */
-@layer utilities {
   /* Custom Animation for Hover Effects */
 
   /* Scale Up on Hover */
@@ -84,13 +79,23 @@
 /* ===================== */
 /*          Dark Mode      */
 /* ===================== */
-/* If you plan to support dark mode, you can add custom dark mode styles here */
-
+/* Custom dark mode styles */
 @media (prefers-color-scheme: dark) {
   @layer components {
     /* Example: Dark Mode Button */
     .btn-primary-dark {
       @apply bg-indigo-400 text-white hover:bg-indigo-300;
     }
+
+    /* Add more dark mode component styles here */
+  }
+
+  @layer utilities {
+    /* Example: Dark Mode Utility */
+    .bg-dark-section {
+      @apply bg-gray-900 text-white;
+    }
+
+    /* Add more dark mode utility styles here */
   }
 }

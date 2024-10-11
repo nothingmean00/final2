@@ -12,6 +12,7 @@ import ServicesPage from "./pages/ServicesPage";
 import TeamPage from "./pages/TeamPage";
 import FAQPage from "./pages/FAQPage";
 import NotFoundPage from "./pages/NotFoundPage"; // Ensure this component exists
+import TermsOfServicePage from "./pages/TermsOfServicePage"; // Import the new page
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header"; // Ensure Header is correctly imported
 import Footer from "./components/Footer"; // Ensure Footer is correctly imported
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/terms" element={<TermsOfServicePage />} /> {/* New Route */}
           <Route path="*" element={<NotFoundPage />} /> {/* 404 Route */}
         </Routes>
       </ErrorBoundary>

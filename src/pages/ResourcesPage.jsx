@@ -1,130 +1,40 @@
 // src/pages/ResourcesPage.jsx
 
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Search, Clock, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useState } from 'react';
+import { Search, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
-import CategoryFilter from "../components/CategoryFilter"; // Import the CategoryFilter component
+import CategoryFilter from '../components/CategoryFilter.jsx'; // Ensure correct path and extension
+import ResourceCard from '../components/ResourceCard.jsx'; // Ensure correct path and extension
+import resources from '../data/Resources.js'; // Ensure correct path and casing
 
-// Sample data for resource categories
-const resourceCategories = [
-  "All",
-  "Application Guides",
-  "Essay Writing Tips",
-  "Test Preparation",
-  "University Profiles",
-  "Admissions Timeline",
-  // Add more categories as needed
-];
-
-// Sample data for resources
-const allResources = [
-  {
-    id: 1,
-    title: "Crafting a Standout Common App Essay",
-    category: "Essay Writing Tips",
-    readTime: "8 min read",
-    content: "Detailed content for crafting a standout Common App Essay...",
-  },
-  {
-    id: 2,
-    title: "SAT vs ACT: Which Test is Right for You?",
-    category: "Test Preparation",
-    readTime: "10 min read",
-    content: "Comprehensive comparison between SAT and ACT...",
-  },
-  {
-    id: 3,
-    title: "Building a Compelling Extracurricular Profile",
-    category: "Application Guides",
-    readTime: "12 min read",
-    content: "Strategies for developing a strong extracurricular profile...",
-  },
-  // Add more resources here
-];
-
-// Resource Card Component
-const ResourceCard = ({ resource, index }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileHover={{ scale: 1.02 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out transform cursor-pointer hover:shadow-xl"
-      onClick={() => setIsExpanded(!isExpanded)}
-    >
-      {/* Header */}
-      <div className="p-6">
-        <h4 className="text-xl font-semibold mb-2">{resource.title}</h4>
-        <p className="text-gray-600 mb-4">{resource.category}</p>
-        <div className="flex items-center text-gray-500 mb-4">
-          <Clock size={16} className="mr-2" aria-hidden="true" />
-          <span>{resource.readTime}</span>
-        </div>
-        <div className="flex justify-between items-center">
-          <span className="text-gray-900 font-semibold">Read More</span>
-          <ChevronRight
-            size={20}
-            className={`transition-transform ${
-              isExpanded ? "rotate-90" : "rotate-0"
-            }`}
-            aria-hidden="true"
-          />
-        </div>
-      </div>
-
-      {/* Expanded Details */}
-      {isExpanded && (
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="px-6 pb-6 text-gray-700"
-        >
-          <p>{resource.content}</p>
-          <Link
-            to={`/resources/${resource.id}`}
-            className="text-gray-900 font-semibold hover:text-gray-700 inline-flex items-center mt-4"
-            aria-label={`Read more about ${resource.title}`}
-            onClick={(e) => e.stopPropagation()} // Prevent card toggle when clicking link
-          >
-            Go to Resource
-            <ChevronRight size={16} className="ml-1" aria-hidden="true" />
-          </Link>
-        </motion.div>
-      )}
-    </motion.div>
-  );
-};
-
-ResourceCard.propTypes = {
-  resource: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    readTime: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-  }).isRequired,
-  index: PropTypes.number.isRequired,
-};
-
-// Main Resources Page Component
 const ResourcesPage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const filteredResources = allResources.filter(
-    (resource) =>
-      (selectedCategory === "All" || resource.category === selectedCategory) &&
-      resource.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Define the resource categories exactly as they appear in Resources.js
+  const resourceCategories = [
+    'All',
+    'Application Guides',
+    'Essay Writing Tips',
+    'Test Preparation',
+    'Letters of Recommendation',
+    'Extracurricular Activities',
+    'Interview Preparation',
+    // Add more categories as needed
+  ];
+
+  // Filter resources based on search term and selected category
+  const filteredResources = resources.filter((resource) => {
+    const matchesCategory =
+      selectedCategory === 'All' || resource.category === selectedCategory;
+    const matchesSearch = resource.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans flex flex-col">
@@ -142,7 +52,7 @@ const ResourcesPage = () => {
         <section
           className="relative pt-32 pb-12 flex items-center justify-center overflow-hidden text-center"
           style={{
-            background: "linear-gradient(135deg, #1F2937 0%, #374151 100%)",
+            background: 'linear-gradient(135deg, #1F2937 0%, #374151 100%)',
           }}
           aria-labelledby="resources-hero-heading"
         >
@@ -231,8 +141,8 @@ const ResourcesPage = () => {
                 className="text-2xl font-bold mb-6"
               >
                 {filteredResources.length > 0
-                  ? "Filtered Resources"
-                  : "No Resources Found"}
+                  ? 'Filtered Resources'
+                  : 'No Resources Found'}
               </h3>
               {filteredResources.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
